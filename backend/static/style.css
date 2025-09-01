@@ -1,0 +1,26 @@
+:root { --bg:#0b1020; --card:#121935; --muted:#9db0ff; --text:#e6ecff; --accent:#5368ff; }
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+.app { max-width: 980px; margin: 0 auto; padding: 20px; }
+header { margin-bottom: 12px; }
+h1 { margin: 0 0 6px; }
+.muted { color: var(--muted); font-size: 14px; }
+
+.uploader, .chat { background: var(--card); padding: 14px; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,.25); margin-bottom: 14px; }
+input[type="file"] { color: var(--text); }
+button { background: var(--accent); color: #fff; border:0; border-radius: 12px; padding: 10px 14px; cursor: pointer; }
+button:hover { filter: brightness(1.08); }
+
+.chat-window { height: 60vh; overflow-y:auto; padding: 8px; background:#0e1730; border-radius: 12px; }
+.chat-input { display:flex; gap:8px; margin-top: 8px; }
+.chat-input input { flex:1; padding:10px; border-radius:12px; border:0; background:#0b1530; color:var(--text); }
+
+.bubble { max-width: 80%; margin: 8px 0; padding: 10px 12px; border-radius: 14px; line-height: 1.35; white-space: pre-wrap; }
+.bubble.user { background:#1b2a6b; margin-left:auto; border-bottom-right-radius: 4px; }
+.bubble.bot { background:#15224d; margin-right:auto; border-bottom-left-radius: 4px; }
+
+.sources { background:#0b1530; border-radius: 12px; padding: 8px 10px; margin: 6px 0 10px; }
+details { margin: 4px 0; }
+summary { cursor: pointer; }
+pre { white-space: pre-wrap; word-wrap: break-word; background:#0a1126; padding: 8px; border-radius:10px; }

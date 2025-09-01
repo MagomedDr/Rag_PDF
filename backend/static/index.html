@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>RAG PDF — LangChain + Chroma + Grok</title>
+    <link rel="stylesheet" href="/static/style.css"/>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>RAG по PDF/документации</h1>
+        <div id="health" class="muted">проверка...</div>
+      </header>
+
+      <section class="uploader">
+        <input type="file" id="file" />
+        <button id="uploadBtn">Загрузить</button>
+        <div id="uploadStatus" class="muted"></div>
+      </section>
+
+      <section class="chat">
+        <div id="chatWindow" class="chat-window"></div>
+        <div class="chat-input">
+          <input id="question" type="text" placeholder="Задай вопрос по загруженным документам..." />
+          <button id="sendBtn">Отправить</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
