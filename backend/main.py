@@ -53,9 +53,6 @@ async def chat(req: ChatRequest):
         message_history.append(HumanMessage(content=user))
         message_history.append(AIMessage(content=bot))
 
-    print(req.history)
-    print(message_history)
-
     chain = build_chain(k=req.top_k)
     result = chain.invoke({'question': req.question,
                            "chat_history": message_history})
