@@ -1,7 +1,7 @@
 import os
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from langchain.schema import HumanMessage, AIMessage
 from .settings import settings
 from .ingest import ingest_file
@@ -64,5 +64,11 @@ async def chat(req: ChatRequest):
 
     return ChatResponse(answer=answer, sources=format_sources(docs, best_chunk=True))
 
+
 STATIC_DIR = os.path.join(os.path.dirname(__file__), "static")
-app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="static")
+
+@app.get("/")
+async def serve_index():
+    return FileResponse(os.path.join(STATIC_DIR, "index.html"))
+
+# app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="static")

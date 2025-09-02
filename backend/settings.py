@@ -13,8 +13,6 @@ class Settings(BaseSettings):
     LLM_TEMPERATURE: float = 0.2
     LLM_MAX_TOKENS: int = 800
 
-    HOST: str = "0.0.0.0"
-    PORT: int = 8000
     ALLOWED_ORIGINS: str = "*"
 
     CHUNK_SIZE: int = 1200
